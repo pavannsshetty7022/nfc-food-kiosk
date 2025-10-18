@@ -18,26 +18,6 @@ This repository contains a small frontend-only kiosk UI intended for demos, prot
 
 ---
 
-## Quick start (Windows)
-
-1. Open a Command Prompt in the project root (e.g., `c:\Github-Projects\NFC-Kiosk`).
-
-2. Serve the static files using Python (if installed):
-
-```cmd
-python -m http.server 8000
-```
-
-Open `http://localhost:8000` in your browser.
-
-Alternatively use Node.js `http-server` (requires Node installed):
-
-```cmd
-npx http-server -p 8000
-```
-
----
-
 ## Development notes
 
 - Code is organized as simple static files:
