@@ -1,0 +1,57 @@
+<div class="kiosk-container container my-5">
+    
+    <div class="row justify-content-center">
+        <div class="col-md-7 col-lg-6">
+            <div class="card shadow-lg border-0 receipt-card">
+                <div class="card-header text-center p-4 receipt-header">
+                    <h2 class="mb-0 fw-bold"><i class="bi bi-receipt me-2"></i> Digital Receipt</h2>
+                    <h5 class="mt-2">{{ nfcIcon }} NFC - Nitte Food Canteen</h5>
+                </div>
+
+                <div class="card-body p-4 bg-light">
+                    <p class="mb-1"><strong>Order Number:</strong> <span class="text-danger fw-bold">#{{ receipt.orderNumber }}</span></p>
+                    <p class="mb-1"><strong>Date & Time:</strong> {{ formatDate(receipt.transactionTime) }}</p>
+                    <hr>
+
+                    <h5 class="fw-bold text-muted mb-3">Items Ordered:</h5>
+                    <ul class="list-group list-group-flush mb-4">
+                        <li class="list-group-item d-flex justify-content-between align-items-center bg-light" ng-repeat="item in receipt.items">
+                            <span>{{ item.quantity }}x {{ item.name }}</span>
+                            <span class="fw-medium">₹{{ (item.price * item.quantity) | number:2 }}</span>
+                        </li>
+                    </ul>
+
+                    <div class="p-3 rounded bg-white">
+                        <div class="d-flex justify-content-between">
+                            <span>Subtotal:</span>
+                            <span>₹{{ receipt.subtotal | number:2 }}</span>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                            <span>Tax:</span>
+                            <span>₹{{ receipt.tax | number:2 }}</span>
+                        </div>
+                        <hr class="my-2">
+                        <div class="d-flex justify-content-between fw-bold fs-5 text-success">
+                            <span>TOTAL PAID:</span>
+                            <span>₹{{ receipt.total | number:2 }}</span>
+                        </div>
+                    </div>
+
+                    <p class="mt-4 text-center fw-bold">Payment Mode: <span class="text-primary">{{ receipt.paymentMode }}</span></p>
+
+                    <hr>
+                    <p class="text-center small text-muted">Thank you for ordering with NFC! Enjoy your meal.</p>
+                </div>
+                
+                <div class="card-footer d-grid gap-2 p-3 bg-white" style="border-bottom-left-radius: 15px; border-bottom-right-radius: 15px;">
+                    <button class="btn btn-outline-secondary btn-lg" ng-click="printReceipt()">
+                        <i class="bi bi-printer me-2"></i> Print Receipt
+                    </button>
+                    <button class="btn btn-nfc-primary btn-lg" ng-click="backToHome()">
+                        <i class="bi bi-house-door-fill me-2"></i> Back to Home
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

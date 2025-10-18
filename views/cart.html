@@ -1,0 +1,90 @@
+<div class="kiosk-container container my-4">
+
+    <h1 class="display-4 fw-bold mb-4 text-center accent-heading">
+        <i class="bi bi-basket-fill me-2"></i> Your Order Cart
+    </h1>
+
+    <div class="row">
+        <div class="col-lg-8 mb-4">
+            <div class="card p-3 shadow-sm border-0">
+                <div class="card-body">
+                    
+                    <div ng-if="!$root.cart || $root.cart.length === 0" class="text-center py-5">
+                        <i class="bi bi-cart-x display-1 text-muted"></i>
+                        <h4 class="mt-3">Your cart is empty.</h4>
+                        <p class="lead text-muted">Time to grab some delicious {{ nfcIcon }} food!</p>
+                        <button class="btn btn-lg btn-nfc-primary mt-3" ng-click="addMoreItems()">
+                            <i class="bi bi-house-door-fill me-2"></i> Back to Menu
+                        </button>
+                    </div>
+
+                    <div ng-if="$root.cart.length > 0">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between align-items-center py-3" ng-repeat="item in $root.cart">
+                                <div class="d-flex align-items-center">
+                                    <img ng-src="{{ item.imageUrl }}" alt="{{ item.name }}" class="cart-item-thumb me-3">
+                                    <div>
+                                        <h5 class="mb-1 fw-bold">{{ item.name }}</h5>
+                                        <small class="text-muted">₹{{ item.price | number:2 }} each</small>
+                                    </div>
+                                </div>
+                                
+                                <div class="d-flex align-items-center">
+                                    <div class="input-group input-group-sm me-3" style="width: 120px;">
+                                        <button class="btn btn-outline-danger" type="button" ng-click="changeQuantity(item, -1)">
+                                            <i class="bi bi-dash-lg"></i>
+                                        </button>
+                                        <input type="text" class="form-control text-center bg-light" ng-model="item.quantity" readonly>
+                                        <button class="btn btn-outline-success" type="button" ng-click="changeQuantity(item, 1)">
+                                            <i class="bi bi-plus-lg"></i>
+                                        </button>
+                                    </div>
+                                    
+                                    <span class="fw-bold me-3 text-nowrap" style="width: 80px;">
+                                        ₹{{ (item.price * item.quantity) | number:2 }}
+                                    </span>
+                                    <button class="btn btn-sm btn-outline-secondary" ng-click="removeItem(item)">
+                                        <i class="bi bi-trash"></i>
+                                    </button>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="col-lg-4" ng-if="$root.cart.length > 0">
+            <div class="cart-summary shadow-lg">
+                <h4>Order Summary</h4>
+                
+                <div class="d-flex justify-content-between mb-2">
+                    <span>Subtotal:</span>
+                    <span class="fw-medium">₹{{ $root.subtotal | number:2 }}</span>
+                </div>
+                
+                <div class="d-flex justify-content-between mb-3">
+                    <span>Tax ({{ $root.TAX_RATE * 100 }}%):</span>
+                    <span class="fw-medium">₹{{ $root.taxAmount | number:2 }}</span>
+                </div>
+                
+                <hr class="border-2 border-dark">
+
+                <div class="d-flex justify-content-between cart-total-row mb-4">
+                    <span>Grand Total:</span>
+                    <span>₹{{ $root.totalAmount | number:2 }}</span>
+                </div>
+
+                <div class="d-grid gap-3">
+                    <button class="btn btn-nfc-primary btn-lg shadow-sm" ng-click="proceedToPayment()">
+                        <i class="bi bi-credit-card-fill me-2"></i> Proceed to Payment
+                    </button>
+                    <button class="btn btn-outline-secondary btn-lg" ng-click="addMoreItems()">
+                        <i class="bi bi-arrow-left-circle me-2"></i> Add More Items
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

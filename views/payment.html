@@ -1,0 +1,29 @@
+<div class="kiosk-container container my-5">
+
+    <h1 class="display-4 fw-bold mb-5 text-center accent-heading">
+        <i class="bi bi-qr-code-scan me-2"></i> Complete Payment
+    </h1>
+
+    <div class="row justify-content-center">
+        <div class="col-md-6">
+            <div class="text-center p-4 bg-white rounded-3 shadow-lg">
+                
+                <p class="lead">Your final amount to pay is:</p>
+                <h2 class="display-3 fw-bolder mb-4" style="color: var(--nfc-red);">
+                    ₹{{ order.total | number:2 }}
+                </h2>
+
+                <div class="qr-code-container d-inline-block mb-4">
+                    <p class="fw-bold mb-3">Scan QR to Pay via UPI/Wallet</p>
+                    <div id="qrcode" class="mx-auto qr-code"></div>
+                </div>
+
+                <p class="text-muted small">This is a simulated QR payment kiosk.</p>
+
+                <button class="btn btn-nfc-primary btn-lg mt-3 w-75 shadow-lg" ng-click="simulatePayment()">
+                    <i class="bi bi-check-circle-fill me-2"></i> Pay Now (Simulate Success)
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
