@@ -75,6 +75,30 @@ width: 20vw;
     .hero-logo { max-width: 220px; }
 }
 
+/* Hero / CTA responsive helpers */
+.hero-title-large { font-size: clamp(1.8rem, 6vw, 3.5rem); line-height: 1.05; }
+.hero-subtitle { font-size: clamp(1rem, 3.2vw, 1.25rem); }
+
+.hero-cta { display: flex; justify-content: center; align-items: center; gap: 3.5rem; flex-wrap: wrap; }
+.cta-option { width: 320px; max-width: 45%; text-align: center; }
+.cta-option img.clickable-image { width: 100%; height: auto; max-width: 100%; border-radius: 12px; }
+.cta-label { margin-top: 10px; font-size: 1.6rem; font-weight: 700; }
+
+@media (max-width: 900px) {
+    .hero-cta { gap: 1.5rem; }
+    .cta-option { max-width: 40%; }
+}
+
+@media (max-width: 576px) {
+    .hero-cta { gap: 1rem; }
+    .cta-option { width: 100%; max-width: 320px; }
+    .cta-label { font-size: 1.25rem; }
+    .hero-title-large { font-size: 2rem; }
+}
+
+/* Ensure general images responsive */
+img { max-width: 100%; height: auto; }
+
 
 .btn-nfc-primary {
     background-color: var(--nfc-red);
