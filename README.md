@@ -18,6 +18,16 @@ This repository contains a small frontend-only kiosk UI intended for demos, prot
 
 ---
 
+## Tech stack
+
+- Frontend: AngularJS 1.x (1.8.2) for routing and controllers
+- UI: Bootstrap 5 (CSS + JS) and Bootstrap Icons for layout and components
+- Styling: CSS3, Google Fonts (Poppins)
+- QR code generation: qrcodejs (client-side QR generator)
+- Build/runtime: Static HTML/JS/CSS (no backend required)
+
+---
+
 ## Development notes
 
 - Code is organized as simple static files:
