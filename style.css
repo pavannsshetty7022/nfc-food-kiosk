@@ -62,7 +62,6 @@ width: 20vw;
 }
 
 
-/* Centered header title sizing */
 .header-center .site-brand h1 { font-size: 2.2rem; font-weight: 800; letter-spacing: 0.6px; margin: 0; }
 @media (max-width: 1024px) {
     .header-center .site-brand h1 { font-size: 1.6rem; }
@@ -71,7 +70,6 @@ width: 20vw;
     .header-center .site-brand h1 { font-size: 1.05rem; }
 }
 
-/* Large hero logo */
 .hero-logo { max-width: 320px; width: 100%; height: auto; display: block; margin: 0 auto; }
 @media (max-width: 576px) {
     .hero-logo { max-width: 220px; }
@@ -95,7 +93,6 @@ width: 20vw;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Secondary button */
 .btn-nfc-secondary {
     background: transparent;
     border: 1px solid var(--nfc-light-gray);
@@ -132,29 +129,23 @@ width: 20vw;
     color: var(--nfc-dark);
 }
 
-/* Cards grid */
 .menu-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 1.25rem; }
 
 .muted { color: var(--nfc-muted); }
 
-/* Cart summary tweaks */
 .cart-summary { max-width: 360px; margin-left: auto; }
 
-/* QR container small screens */
 .qr-code-container { max-width: 320px; margin: 0 auto; }
 
-/* Responsive tweaks */
 @media (max-width: 768px) {
     .nfc-logo { font-size: 2.2rem; }
     .btn-nfc-primary { font-size: 1rem; padding: 12px 20px; }
     .kiosk-container { padding-left: 12px; padding-right: 12px; }
 }
 
-/* Common page title and accents */
 .page-title { font-size: 1.8rem; font-weight: 700; margin-bottom: 1rem; }
 .accent-heading { color: var(--nfc-red); }
 
-/* Receipt header */
 .receipt-header { background-color: var(--nfc-red); color: var(--nfc-white); border-top-left-radius: 15px; border-top-right-radius: 15px; }
 
 .cart-item-thumb { width: 80px; height: 60px; object-fit: cover; border-radius: 6px; }
