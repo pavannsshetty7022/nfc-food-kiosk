@@ -1,14 +1,14 @@
 <div class="kiosk-container container my-0">
     
-    <div class="container d-flex align-items-center justify-content-center text-center py-0  header-center">
-            <div class="me-0 ">
-                <img src="images/NFC logo.png" alt="Nitte Food Canteen logo" class="image-wrapper" style="height: 250px; width: 250px;"/>
+    <div class="container d-flex align-items-center justify-content-center text-center py-3 header-center">
+            <div class="me-3">
+                <img src="images/NFC logo.png" alt="Nitte Food Canteen logo" class="site-logo-large" />
             </div>
             <div class="site-brand ms-3">
-                <h1 class="h3 mb-0 accent-heading" style="font-size: 50px; font-family: 'Bebas Neue', sans-serif;">Nitte Food Canteen</h1>
-                <small class="text-muted" style="font-size: 20px;">Self-service Kiosk</small>
+                <h1 class="accent-heading" style="font-family: 'Bebas Neue', sans-serif;">Nitte Food Canteen</h1>
+                <small class="text-muted">Self-service Kiosk</small>
             </div>
-        </div>
+    </div>
 
                 <div id="promoCarousel" class="carousel slide mb-5" data-bs-ride="carousel" data-bs-interval="3000">
         <div class="carousel-inner rounded-3 shadow-lg">
@@ -25,19 +25,20 @@
 
             <div class="card-body">
 
-                <h1 class="fw-bold display-1 mb-3 text-center p-4">ORDER HERE</h1>
-                <h2 class="fw-bold display-3 mb-3 text-center p-4">TO SKIP THE QUEUE</h2>
-                <p class="lead text-muted mb-4 text-center p-4">Fast, contactless ordering for students and staff.</p>
+                <h1 class="fw-bold hero-title-large mb-2 text-center">ORDER HERE</h1>
+                <h2 class="fw-bold hero-title-large mb-3 text-center">TO SKIP THE QUEUE</h2>
+                <p class="lead text-muted hero-subtitle mb-4 text-center">Fast, contactless ordering for students and staff.</p>
 
-            <div class="d-flex justify-content-center align-items-center" style="gap: 150px;">
-            <div class="text-center" ng-click="dineIn()">
-                <img src="images/dine in.png" alt="Dine in" class="clickable-image" style="width:250px; height:auto;" />
-                <div style="margin-top: 10px; font-size: 35px; font-weight: bold;" class="click-text" ng-click="takeAway()">Dine In</div>
-            </div>
-            <div class="text-center" ng-click="takeAway()">
-                <img src="images/take_away.png" alt="Take away" class="clickable-image" style="width:250px; height:auto;" />
-                <div style="margin-top: 10px; font-size: 35px; font-weight: bold;" class="click-text" ng-click="takeAway()">Take Away</div>
-            </div>
+            <div class="hero-cta">
+                <div class="cta-option" ng-click="dineIn()">
+                    <img src="images/dine in.png" alt="Dine in" class="clickable-image" />
+                    <div class="cta-label">Dine In</div>
+                </div>
+
+                <div class="cta-option" ng-click="takeAway()">
+                    <img src="images/take_away.png" alt="Take away" class="clickable-image" />
+                    <div class="cta-label">Take Away</div>
+                </div>
             </div>
 
             </div>
