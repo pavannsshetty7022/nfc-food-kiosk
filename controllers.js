@@ -25,12 +25,10 @@ angular.module('nfcKioskApp')
 
     $scope.cartCount = $rootScope.cart.length; 
 
-    // Initialize Bootstrap carousel after the view has rendered so the active class set by Angular is present
     $timeout(function() {
         var el = document.getElementById('promoCarousel');
         if (el && typeof bootstrap !== 'undefined' && bootstrap.Carousel) {
             try {
-                // Re-init carousel with 3s interval and autoplay; do not pause on hover
                 new bootstrap.Carousel(el, { interval: 3000, ride: 'carousel', pause: false, wrap: true, touch: true });
             } catch (e) {
                 console.warn('Carousel init failed', e);
